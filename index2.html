@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            padding: 20px;
+        }
+
+        /* Phần 1: Form thông tin */
+        .info-section, .functions-section {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+
+        .info-section h2, .functions-section h2 {
+            color: #333;
+        }
+
+        /* Form cập nhật thông tin */
+        form {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input[type="text"], form input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Danh sách */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Phần 1: Form thông tin -->
+        <div class="info-section">
+            <h2>Thông tin của bạn</h2>
+            <!-- Form cập nhật thông tin -->
+            <form id="updateForm">
+                <label for="name">Tên:</label>
+                <input type="text" id="name" name="name" placeholder="Nhập tên của bạn">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email của bạn">
+                
+                <button type="submit">Cập nhật</button>
+            </form>
+
+            <!-- Danh sách đơn hàng -->
+            <h3>Lịch sử mua hàng</h3>
+            <ul id="orderHistory">
+                <li>Đơn hàng 1</li>
+                <li>Đơn hàng 2</li>
+                <li>Đơn hàng 3</li>
+            </ul>
+
+            <!-- Danh sách sản phẩm đã xem -->
+            <h3>Sản phẩm đã xem</h3>
+            <ul id="viewedProducts">
+                <li>Sản phẩm 1</li>
+                <li>Sản phẩm 2</li>
+                <li>Sản phẩm 3</li>
+            </ul>
+        </div>
+
+        <!-- Phần 2: Hệ thống chức năng của user -->
+        <div class="functions-section">
+            <h2>Chức năng người dùng</h2>
+            <ul>
+                <li><a href="#">Cập nhật thông tin</a></li>
+                <li><a href="#">Quản lý đơn hàng</a></li>
+                <li><a href="#">Sản phẩm đã xem</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Xử lý form cập nhật thông tin
+        const updateForm = document.getElementById('updateForm');
+        updateForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Xử lý cập nhật thông tin ở đây (ví dụ: gửi lên server)
+            alert('Thông tin của bạn đã được cập nhật: ' + name + ', ' + email);
+        });
+    </script>
+</body>
+</html>
